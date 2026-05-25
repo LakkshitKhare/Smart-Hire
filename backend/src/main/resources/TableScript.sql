@@ -4,7 +4,7 @@ use smart_hire;
 
 CREATE TABLE users (
 
-    user_id BIGINT PRIMARY KEY not null,
+    user_id BIGINT PRIMARY KEY not null auto_increment,
 
     name VARCHAR(255),
 
