@@ -11,6 +11,8 @@ export class AuthService {
 
   register(payload:any){
     return this.http.post(this.userUrl+"/register",payload ,{responseType:'text'});
-
+  }
+  login(payload:any){
+    return this.http.post(this.userUrl+"/login",payload,{responseType:'text'});
   }
 }

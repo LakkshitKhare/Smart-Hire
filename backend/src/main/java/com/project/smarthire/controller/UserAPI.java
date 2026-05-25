@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.smarthire.dto.LoginDTO;
 import com.project.smarthire.dto.UserDTO;
+import com.project.smarthire.exception.SmartHireException;
 import com.project.smarthire.service.UserService;
 
 import jakarta.validation.Valid;
@@ -24,13 +25,13 @@ public class UserAPI {
     UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody @Valid UserDTO dto) {
+    public ResponseEntity<String> registerUser(@RequestBody @Valid UserDTO dto) throws SmartHireException {
         String message = userService.registerUser(dto);
         return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginUser(@RequestBody LoginDTO loginDTO){
+    public ResponseEntity<String> loginUser(@RequestBody LoginDTO loginDTO) throws SmartHireException{
         String message = userService.loginUser(loginDTO);
         return new ResponseEntity<>(message,HttpStatus.OK);
     }

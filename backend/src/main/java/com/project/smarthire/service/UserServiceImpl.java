@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.project.smarthire.dto.LoginDTO;
 import com.project.smarthire.dto.UserDTO;
 import com.project.smarthire.entity.User;
+import com.project.smarthire.exception.SmartHireException;
 import com.project.smarthire.repository.UserRepository;
 
 import jakarta.transaction.Transactional;
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     @Override
-    public String registerUser(UserDTO userDTO) {
+    public String registerUser(UserDTO userDTO) throws SmartHireException {
         User user = userRepository.findByEmail(userDTO.getEmail());
         if (user == null) {
             User newuser = modelMapper.map(userDTO, User.class);
@@ -32,18 +33,18 @@ public class UserServiceImpl implements UserService {
             userRepository.save(newuser);
             return "User registered with email: " + userDTO.getEmail();
         } else {
-            return "User is already registered";
+            throw new SmartHireException("Service.USER_ALREADY_EXISTS");
         }
     }
 
     @Override
-    public String loginUser(LoginDTO loginDTO){
+    public String loginUser(LoginDTO loginDTO) throws  SmartHireException{
         User user = userRepository.findByEmail(loginDTO.getEmail());
         if(user == null){
-            return "Invalid Credentials";
+            throw new SmartHireException("Service.INVALID_CREDENTIALS");
         }
         if(!encoder.matches(loginDTO.getPassword(), user.getPassword())){
-            return "Invalid Credentials";
+            throw new SmartHireException("Service.INVALID_CREDENTIALS");
         }
         return "Login Success";
     }
