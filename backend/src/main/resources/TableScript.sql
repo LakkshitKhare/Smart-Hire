@@ -12,8 +12,8 @@ CREATE TABLE users (
 
     role ENUM('CANDIDATE','RECRUITER','ADMIN') not null,
 
-    password_hash VARCHAR(255) not null,
+    password VARCHAR(255) not null,
 
-    tel_number VARCHAR(20)
+    mobile VARCHAR(20)
 
 );

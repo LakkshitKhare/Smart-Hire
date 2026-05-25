@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.register-form {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 38px 34px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.4s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.register-form h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-actions {
+  margin-top: 10px;
+}
+
+.form-actions button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
+}
+
+.form-actions button:active {
+  transform: scale(0.98);
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+select option {
+  color: #0f172a;
+}
+
+.login-link {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: #64748b;
+}
+
+.login-link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .register-form {
+    padding: 30px 24px;
+  }
+
+  .register-form h2 {
+    font-size: 1.7rem;
+  }
+}

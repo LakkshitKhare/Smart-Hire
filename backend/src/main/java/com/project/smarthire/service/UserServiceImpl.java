@@ -28,11 +28,11 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByEmail(userDTO.getEmail());
         if (user == null) {
             User newuser = modelMapper.map(userDTO, User.class);
-            newuser.setPasswordHash(encoder.encode(userDTO.getPasswordHash()));
+            newuser.setPassword(encoder.encode(userDTO.getPassword()));
             userRepository.save(newuser);
             return "User registered with email: " + userDTO.getEmail();
         } else {
-            return "User already exists with email: " + userDTO.getEmail();
+            return "User is already registered";
         }
     }
 
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
         if(user == null){
             return "Invalid Credentials";
         }
-        if(!encoder.matches(loginDTO.getPassword(), user.getPasswordHash())){
+        if(!encoder.matches(loginDTO.getPassword(), user.getPassword())){
             return "Invalid Credentials";
         }
         return "Login Success";

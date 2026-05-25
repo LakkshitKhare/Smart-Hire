@@ -1,0 +1,37 @@
+<form class="register-form" [formGroup]="registerForm" (submit)="onSubmit()">
+	<h2>Register</h2>
+
+	<div class="form-group">
+		<label for="name">Full Name</label>
+		<input id="name" formControlName="name" type="text"  placeholder="Enter your full name" />
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input id="email" formControlName="email" type="email"  placeholder="you@example.com" />
+	</div>
+
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input id="password" formControlName="password" type="password"  placeholder="Create a password"
+			autocomplete="new-password" />
+	</div>
+
+	<div class="form-group">
+		<label for="mobile">Mobile Number</label>
+		<input id="mobile" formControlName="mobile" type="tel" pattern="[0-9]{10,15}"  placeholder="e.g. 1234567890" />
+	</div>
+
+	<div class="form-group">
+		<label for="role">Role</label>
+		<select id="role" formControlName="role" >
+			<option value="" disabled selected>Select role</option>
+			<option value="CANDIDATE">CANDIDATE</option>
+			<option value="RECRUITER">RECRUITER</option>
+		</select>
+	</div>
+
+	<div class="form-actions">
+		<button type="submit">Register</button>
+	</div>
+</form>

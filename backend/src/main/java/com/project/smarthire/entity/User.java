@@ -18,6 +18,6 @@ public class User {
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
-    private String passwordHash;
-    private String telNumber;
+    private String password;
+    private String mobile;
 }
