@@ -88,3 +88,15 @@ src/main/java/com/project/smarthire
 ├── config
 ├── exception
 └── util
+
+
+## Frontend Structure
+src/app
+
+├── components
+├── services
+├── models
+├── pages
+├── guards
+└── interceptors
+
