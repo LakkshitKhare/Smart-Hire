@@ -7,14 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { CandidateDashboardComponent } from './features/candidate-dashboard/candidate-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
+    CandidateDashboardComponent
   ],
   imports: [
     BrowserModule,
