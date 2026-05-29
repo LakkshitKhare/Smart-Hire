@@ -7,4 +7,5 @@ public interface CandidateService {
 
     String addDetails(CandidateProfileDTO candidateProfileDTO) throws SmartHireException;
 
+    CandidateProfileDTO getDetails(String email) throws SmartHireException;
 }

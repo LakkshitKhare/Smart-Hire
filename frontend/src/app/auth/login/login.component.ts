@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
       next:(res:any)=>{
         console.log(res);
         this.router.navigate(['/candidate']);
+        localStorage.setItem('email',this.loginForm.value.email)
       },
       error:(err:any)=>{
         console.error(err);
