@@ -10,6 +10,9 @@ import { CandidateService } from '../../../services/candidate.service';
 })
 export class ProfileComponent implements OnInit {
 
+  candidateName:any;
+  candidateEmail:any;
+  candidateNumber:any;
 
   profileForm!: FormGroup;
 
@@ -21,31 +24,38 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
 
     this.getDetails();
+    this.profileForm = this.fb.group({
+      fullName: [this.candidateName],
+      email: [this.candidateEmail],
+      mobile: [this.candidateNumber],
+      location: [''],
+      linkedinUrl: [''],
+      githubUrl: [''],
+      skills: [''],
+      experienceInYears: [''],
+      education: ['']
+    });
 
   }
 
-  getDetails() {
-
-    this.candidate
-      .getDetailsOfCandidate(localStorage.getItem('email'))
-      .subscribe((data: any) => {
-
-        this.profileForm = this.fb.group({
-
-          fullName: [data.fullName],
-          email: [data.email],
-          mobile: [data.mobile],
-          location: [data.location],
-          linkedinUrl: [data.linkedinUrl],
-          githubUrl: [data.githubUrl],
-          skills: [data.skills],
-          experienceInYears: [data.experienceInYears],
-          education: [data.education]
-
+  getDetails(){
+    this.candidate.getDetailsOfCandidate(localStorage.getItem('email')).subscribe((data:any)=>{
+      console.log(data)
+      this.candidateName = data.fullName
+      this.candidateEmail = data.email
+      this.candidateNumber = data.mobile;
+      this.profileForm.patchValue({
+          fullName: data.fullName,
+          email: data.email,
+          mobile: data.mobile,
+          location: data.location,
+          linkedinUrl: data.linkedinUrl,
+          githubUrl: data.githubUrl,
+          skills: data.skills,
+          experienceInYears: data.experienceInYears,
+          education: data.education
         });
-
-      });
-
+    })
   }
 
   onSubmit() {

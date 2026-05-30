@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
-import { CandidateDashboardComponent } from './features/candidate-dashboard/candidate-dashboard.component';
+import { CandidateDashboardComponent } from './features/candidate/candidate-dashboard/candidate-dashboard.component';
 
 import { LayoutComponent } from './features/candidate/layout/layout.component';
 
