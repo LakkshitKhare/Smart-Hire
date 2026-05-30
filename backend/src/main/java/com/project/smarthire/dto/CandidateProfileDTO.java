@@ -2,6 +2,7 @@ package com.project.smarthire.dto;
 
 import lombok.Data;
 
+
 @Data
 public class CandidateProfileDTO {
 
@@ -15,5 +16,5 @@ public class CandidateProfileDTO {
     private Integer experienceInYears;
     private String resumeUrl;
     private String education;
-;
+
 }

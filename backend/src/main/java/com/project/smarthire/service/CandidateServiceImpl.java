@@ -22,11 +22,12 @@ public class CandidateServiceImpl implements CandidateService {
 
     @Override
     public String addDetails (CandidateProfileDTO candidateProfileDTO) throws SmartHireException{
-        
-        
-        
-        
-        return null;
+       CandidateProfile candidate = candidateRepository.findByEmail(candidateProfileDTO.getEmail());
+       if(candidate==null){
+        throw new SmartHireException("Service.CANDIDATE_NOT_FOUND");
+       }
+       CandidateProfile updateCandidate = modelMapper.map(candidateProfileDTO,CandidateProfile.class);
+       return "Data Saved Successfully for "+updateCandidate.getFullName();
     }
 
     @Override

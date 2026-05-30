@@ -32,6 +32,15 @@ export class CandidateDashboardComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.profileForm.value)
+    this.candidate.saveDetails(this.profileForm.getRawValue()).subscribe({
+      next:(res)=>{
+        console.log(res);
+      },
+      error:(err)=>{
+        console.error(err);
+      }
+    });
 
   }
   onFileSelected($event: any) {

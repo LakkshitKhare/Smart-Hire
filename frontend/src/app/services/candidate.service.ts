@@ -13,4 +13,7 @@ export class CandidateService {
   getDetailsOfCandidate(email:any){
     return this.http.get(this.baseUrl+"/"+email);
   }
+  saveDetails(payload:any){
+    return this.http.put(this.baseUrl+"/save",payload,{responseType:'text'});
+  }
 }
