@@ -8,13 +8,17 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidateDashboardComponent } from './features/candidate-dashboard/candidate-dashboard.component';
+import { ProfileComponent } from './features/candidate/profile/profile.component';
+import { LayoutComponent } from './features/candidate/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    CandidateDashboardComponent
+    CandidateDashboardComponent,
+    ProfileComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

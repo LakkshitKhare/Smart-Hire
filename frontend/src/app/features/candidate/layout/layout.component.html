@@ -1,0 +1,58 @@
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            SmartHire
+        </div>
+
+        <ul class="menu">
+
+            <li routerLink="/candidate/dashboard"
+                routerLinkActive="active">
+
+                Dashboard
+
+            </li>
+
+            <li routerLink="/candidate/profile"
+                routerLinkActive="active">
+
+                My Profile
+
+            </li>
+
+            <li routerLink="/candidate/jobs"
+                routerLinkActive="active">
+
+                Applied Jobs
+
+            </li>
+
+            <li routerLink="/candidate/assessments"
+                routerLinkActive="active">
+
+                Assessments
+
+            </li>
+
+            <li routerLink="/candidate/interviews"
+                routerLinkActive="active">
+
+                Interviews
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <router-outlet></router-outlet>
+
+    </main>
+
+</div>
