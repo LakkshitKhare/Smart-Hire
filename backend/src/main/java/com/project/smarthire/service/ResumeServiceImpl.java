@@ -35,7 +35,7 @@ public class ResumeServiceImpl
     @Autowired
     private CandidateRepository candidateRepository;
 
-    private ModelMapper modelMapper = new ModelMapper();
+    private final ModelMapper modelMapper = new ModelMapper();
 
     @Value("${file.upload-dir}")
     private String uploadDir;

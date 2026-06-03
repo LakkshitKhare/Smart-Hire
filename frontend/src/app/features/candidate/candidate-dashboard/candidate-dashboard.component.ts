@@ -17,7 +17,11 @@ export class CandidateDashboardComponent implements OnInit {
   
   ngOnInit(): void {
     
-    
+    this.candidateEmail = localStorage.getItem('email');
+    this.candidate.getDetailsOfCandidate(this.candidateEmail).subscribe((data:any)=>{
+      this.candidateName = data.fullName;
+      this.candidateNumber = data.mobile;
+    })
   }
 
 }

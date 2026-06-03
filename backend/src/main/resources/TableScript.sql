@@ -38,7 +38,6 @@ CREATE TABLE candidate_profile (
 
     experience_in_years INT,
 
-    resume_url VARCHAR(500),
 
     education TEXT,
 

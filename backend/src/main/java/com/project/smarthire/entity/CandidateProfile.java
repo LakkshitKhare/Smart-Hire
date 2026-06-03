@@ -23,7 +23,6 @@ public class CandidateProfile {
     private String githubUrl;
     private String skills;
     private Integer experienceInYears;
-    private String resumeUrl;
     private String education;
 
     @OneToOne

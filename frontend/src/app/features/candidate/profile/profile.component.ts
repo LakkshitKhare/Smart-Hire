@@ -61,10 +61,12 @@ export class ProfileComponent implements OnInit {
   onSubmit() {
 
     this.candidate
-      .saveDetails(this.profileForm.getRawValue())
+      .saveDetails(this.profileForm.value)
       .subscribe({
 
         next: (data: any) => {
+
+          console.log(this.profileForm.value)
           console.log(data);
           alert("Profile Updated Successfully");
         },

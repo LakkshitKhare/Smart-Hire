@@ -14,7 +14,6 @@ public class CandidateProfileDTO {
     private String githubUrl;
     private String skills;
     private Integer experienceInYears;
-    private String resumeUrl;
     private String education;
 
 }

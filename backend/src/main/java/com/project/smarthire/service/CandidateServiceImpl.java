@@ -21,25 +21,46 @@ public class CandidateServiceImpl implements CandidateService {
     ModelMapper modelMapper = new ModelMapper();
 
     @Override
-    public String addDetails (CandidateProfileDTO candidateProfileDTO) throws SmartHireException{
-       CandidateProfile candidate = candidateRepository.findByEmail(candidateProfileDTO.getEmail());
-       if(candidate==null){
-        throw new SmartHireException("Service.CANDIDATE_NOT_FOUND");
-       }
-       CandidateProfile updateCandidate = modelMapper.map(candidateProfileDTO,CandidateProfile.class);
-       return "Data Saved Successfully for "+updateCandidate.getFullName();
+    public String addDetails(
+            CandidateProfileDTO dto)
+            throws SmartHireException {
+
+        CandidateProfile candidate
+                = candidateRepository.findByEmail(
+                        dto.getEmail());
+
+        if (candidate == null) {
+            throw new SmartHireException(
+                    "Candidate not found");
+        }
+
+        candidate.setFullName(dto.getFullName());
+        candidate.setMobile(dto.getMobile());
+        candidate.setEmail(dto.getEmail());
+        candidate.setLocation(dto.getLocation());
+        candidate.setLinkedinUrl(dto.getLinkedinUrl());
+        candidate.setGithubUrl(dto.getGithubUrl());
+        candidate.setSkills(dto.getSkills());
+        candidate.setEducation(dto.getEducation());
+
+        if (dto.getExperienceInYears() != null) {
+            candidate.setExperienceInYears(
+                    dto.getExperienceInYears());
+        }
+
+        candidateRepository.save(candidate);
+
+        return "Updated Successfully";
     }
 
     @Override
     public CandidateProfileDTO getDetails(String email) throws SmartHireException {
         CandidateProfile candidate = candidateRepository.findByEmail(email);
-        if(candidate == null){
+        if (candidate == null) {
             throw new SmartHireException("Service.CANDIDATE_NOT_FOUND");
         }
-        return modelMapper.map(candidate,CandidateProfileDTO.class);
+        return modelMapper.map(candidate, CandidateProfileDTO.class);
 
     }
-
-
 
 }
