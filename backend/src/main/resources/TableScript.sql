@@ -49,3 +49,23 @@ CREATE TABLE candidate_profile (
         REFERENCES user(user_id)
 
 );
+
+    CREATE TABLE resume (
+
+        resume_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+
+        resume_name VARCHAR(255),
+
+        resume_url VARCHAR(500),
+
+        upload_time DATETIME,
+
+        candidate_id BIGINT,
+
+        CONSTRAINT fk_resume_candidate
+            FOREIGN KEY (candidate_id)
+            REFERENCES candidate_profile(profile_id)
+
+            ON DELETE CASCADE
+
+    );

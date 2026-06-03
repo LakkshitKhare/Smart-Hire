@@ -9,6 +9,7 @@ import { CandidateDashboardComponent } from './features/candidate/candidate-dash
 import { LayoutComponent } from './features/candidate/layout/layout.component';
 
 import { ProfileComponent } from './features/candidate/profile/profile.component';
+import { ResumeComponent } from './features/candidate/resume/resume.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path:'myresume',
+        component:ResumeComponent
       },
       {
         path: '',

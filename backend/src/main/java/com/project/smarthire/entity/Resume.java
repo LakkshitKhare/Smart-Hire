@@ -18,6 +18,7 @@ public class Resume {
     private Long resumeId;
     private String resumeName;
     private LocalDateTime uploadTime;
+    private String resumeUrl;
 
     @ManyToOne
     @JoinColumn(name="candidate_id")

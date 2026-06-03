@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CandidateDashboardComponent } from './features/candidate/candidate-dashboard/candidate-dashboard.component';
 import { ProfileComponent } from './features/candidate/profile/profile.component';
 import { LayoutComponent } from './features/candidate/layout/layout.component';
+import { ResumeComponent } from './features/candidate/resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LayoutComponent } from './features/candidate/layout/layout.component';
     RegisterComponent,
     CandidateDashboardComponent,
     ProfileComponent,
-    LayoutComponent
+    LayoutComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

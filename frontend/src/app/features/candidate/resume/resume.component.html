@@ -1,0 +1,88 @@
+<div class="resume-page">
+
+    <div class="page-header">
+
+        <div>
+
+            <h2>My Resumes</h2>
+
+            <p>
+                Upload and manage your resumes
+            </p>
+
+        </div>
+
+        <div class="resume-count">
+
+            {{resumes.length}} / 5 Resumes
+
+        </div>
+
+    </div>
+
+    <!-- UPLOAD BOX -->
+
+    <div class="upload-card">
+
+        <div class="drop-zone" [class.dragging]="dragging" (drop)="onDrop($event)" (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave()">
+
+            <h3>
+                Drag & Drop Resume Here
+            </h3>
+
+            <p>
+                or
+            </p>
+
+            <input type="file" accept=".pdf,.doc,.docx" (change)="onFileSelected($event)">
+
+        </div>
+
+        <button (click)="uploadResume()">
+
+            Upload Resume
+
+        </button>
+
+    </div>
+
+    <!-- RESUME LIST -->
+
+    <div class="resume-grid">
+
+        <div class="resume-card" *ngFor="let resume of resumes">
+
+            <h3>
+                {{resume.resumeName}}
+            </h3>
+
+            <p>
+                Uploaded Resume
+            </p>
+
+            <div class="actions">
+
+                <button class="delete-btn" (click)="deleteResume(
+                            resume.resumeId)">
+
+                    Delete
+
+                </button>
+                <a [href]="'http://localhost:8765' + resume.resumeUrl" target="_blank">
+
+                    <button class="preview-btn">
+
+                        Preview
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

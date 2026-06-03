@@ -10,9 +10,7 @@
             </p>
         </div>
 
-        <button
-            class="save-btn"
-            (click)="onSubmit()">
+        <button class="save-btn" (click)="onSubmit()">
 
             Save Profile
 
@@ -23,8 +21,7 @@
     <!-- PROFILE CARD -->
     <div class="profile-card">
 
-        <form
-            [formGroup]="profileForm">
+        <form [formGroup]="profileForm">
 
             <!-- BASIC INFO -->
             <div class="section">
@@ -36,18 +33,13 @@
                     <div class="form-group">
                         <label>Full Name</label>
 
-                        <input
-                            type="text"
-                            formControlName="fullName">
+                        <input type="text" formControlName="fullName">
                     </div>
 
                     <div class="form-group">
                         <label>Email</label>
 
-                        <input
-                            type="email"
-                            formControlName="email"
-                            readonly>
+                        <input type="email" formControlName="email" readonly>
                     </div>
 
                 </div>
@@ -57,17 +49,13 @@
                     <div class="form-group">
                         <label>Mobile</label>
 
-                        <input
-                            type="text"
-                            formControlName="mobile">
+                        <input type="text" formControlName="mobile">
                     </div>
 
                     <div class="form-group">
                         <label>Location</label>
 
-                        <input
-                            type="text"
-                            formControlName="location">
+                        <input type="text" formControlName="location">
                     </div>
 
                 </div>
@@ -84,17 +72,13 @@
                     <div class="form-group">
                         <label>LinkedIn URL</label>
 
-                        <input
-                            type="url"
-                            formControlName="linkedinUrl">
+                        <input type="url" formControlName="linkedinUrl">
                     </div>
 
                     <div class="form-group">
                         <label>GitHub URL</label>
 
-                        <input
-                            type="url"
-                            formControlName="githubUrl">
+                        <input type="url" formControlName="githubUrl">
                     </div>
 
                 </div>
@@ -104,18 +88,13 @@
                     <div class="form-group">
                         <label>Skills</label>
 
-                        <input
-                            type="text"
-                            formControlName="skills"
-                            placeholder="Java, Spring Boot, Angular">
+                        <input type="text" formControlName="skills" placeholder="Java, Spring Boot, Angular">
                     </div>
 
                     <div class="form-group">
                         <label>Experience (Years)</label>
 
-                        <input
-                            type="number"
-                            formControlName="experienceInYears">
+                        <input type="number" formControlName="experienceInYears">
                     </div>
 
                 </div>
@@ -131,26 +110,8 @@
 
                     <label>Education Details</label>
 
-                    <textarea
-                        rows="6"
-                        formControlName="education">
+                    <textarea rows="6" formControlName="education">
                     </textarea>
-
-                </div>
-
-            </div>
-
-            <!-- RESUME -->
-            <div class="section">
-
-                <h3>Resume</h3>
-
-                <div class="form-group">
-
-                    <input
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        (change)="onFileSelected($event)">
 
                 </div>
 
