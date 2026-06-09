@@ -68,3 +68,26 @@ CREATE TABLE candidate_profile (
             ON DELETE CASCADE
 
     );
+
+CREATE TABLE recruiter (
+
+    recruiter_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+
+    company_name VARCHAR(255),
+
+    designation VARCHAR(255),
+
+    recruiter_name VARCHAR(255),
+
+    company_website VARCHAR(255),
+
+    company_location VARCHAR(255),
+
+    user_id BIGINT UNIQUE,
+
+    CONSTRAINT fk_recruiter_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(user_id)
+        ON DELETE CASCADE
+
+);

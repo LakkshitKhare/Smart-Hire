@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 import com.project.smarthire.dto.LoginDTO;
 import com.project.smarthire.dto.UserDTO;
 import com.project.smarthire.entity.CandidateProfile;
+import com.project.smarthire.entity.Recruiter;
 import com.project.smarthire.entity.Role;
 import com.project.smarthire.entity.User;
 import com.project.smarthire.exception.SmartHireException;
 import com.project.smarthire.repository.CandidateRepository;
+import com.project.smarthire.repository.RecruiterRepository;
 import com.project.smarthire.repository.UserRepository;
 
 import jakarta.transaction.Transactional;
@@ -25,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     CandidateRepository candidateRepository;
+
+    @Autowired
+    RecruiterRepository recruiterRepository;
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -44,6 +49,12 @@ public class UserServiceImpl implements UserService {
                 candidateProfile.setMobile(savedUser.getMobile());
                 candidateProfile.setUser(savedUser);
                 candidateRepository.save(candidateProfile);
+            }
+            else if(savedUser.getRole() == Role.RECRUITER){
+                Recruiter recruiter = new Recruiter();
+                recruiter.setRecruiterName(savedUser.getName());
+                recruiter.setUser(savedUser);
+                recruiterRepository.save(recruiter);
             }
             
 
