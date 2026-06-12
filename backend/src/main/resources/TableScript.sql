@@ -91,3 +91,42 @@ CREATE TABLE recruiter (
         ON DELETE CASCADE
 
 );
+
+CREATE TABLE job (
+
+    job_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+
+    job_title VARCHAR(255),
+
+    company_name VARCHAR(255),
+
+    location VARCHAR(255),
+
+    job_type VARCHAR(100),
+
+    experience_required INT,
+
+    salary_min DOUBLE,
+
+    salary_max DOUBLE,
+
+    required_skills VARCHAR(1000),
+
+    description TEXT,
+
+    vacancies INT,
+
+    application_deadline DATE,
+
+    posted_date DATETIME,
+
+    status VARCHAR(50),
+
+    recruiter_id BIGINT,
+
+    CONSTRAINT fk_job_recruiter
+        FOREIGN KEY (recruiter_id)
+        REFERENCES recruiter(recruiter_id)
+        ON DELETE CASCADE
+
+);

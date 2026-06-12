@@ -21,8 +21,12 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.auth.login(this.loginForm.value).subscribe({
       next:(res:any)=>{
-        console.log(res);
+        if(res == 'CANDIDATE'){
         this.router.navigate(['/candidate']);
+        }
+        else if(res=='RECRUITER'){
+          this.router.navigate(['/recruiter']);
+        }
         localStorage.setItem('email',this.loginForm.value.email)
       },
       error:(err:any)=>{

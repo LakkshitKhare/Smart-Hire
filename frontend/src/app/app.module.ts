@@ -11,6 +11,9 @@ import { CandidateDashboardComponent } from './features/candidate/candidate-dash
 import { ProfileComponent } from './features/candidate/profile/profile.component';
 import { LayoutComponent } from './features/candidate/layout/layout.component';
 import { ResumeComponent } from './features/candidate/resume/resume.component';
+import { RecruiterDashboardComponent } from './features/recruiter/recruiter-dashboard/recruiter-dashboard.component';
+import { RecruiterLayoutComponent } from './features/recruiter/recruiter-layout/recruiter-layout.component';
+import { CreateJobComponent } from './features/recruiter/create-job/create-job.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ResumeComponent } from './features/candidate/resume/resume.component';
     CandidateDashboardComponent,
     ProfileComponent,
     LayoutComponent,
-    ResumeComponent
+    ResumeComponent,
+    RecruiterDashboardComponent,
+    RecruiterLayoutComponent,
+    CreateJobComponent
   ],
   imports: [
     BrowserModule,

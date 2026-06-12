@@ -1,0 +1,169 @@
+<div class="create-job-page">
+
+    <div class="page-header">
+
+        <h2>Create Job</h2>
+
+        <p>
+            Post a new opportunity for candidates.
+        </p>
+
+    </div>
+
+    <form
+        [formGroup]="jobForm"
+        (ngSubmit)="onSubmit()">
+
+        <div class="job-card">
+
+            <div class="form-group">
+
+                <label>Job Title</label>
+
+                <input
+                    type="text"
+                    formControlName="jobTitle">
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        formControlName="location">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Job Type</label>
+
+                    <select
+                        formControlName="jobType">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="FULL_TIME">
+                            Full Time
+                        </option>
+
+                        <option value="PART_TIME">
+                            Part Time
+                        </option>
+
+                        <option value="INTERNSHIP">
+                            Internship
+                        </option>
+
+                        <option value="CONTRACT">
+                            Contract
+                        </option>
+
+                        <option value="REMOTE">
+                            Remote
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Experience Required</label>
+
+                    <input
+                        type="number"
+                        formControlName="experienceRequired">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Vacancies</label>
+
+                    <input
+                        type="number"
+                        formControlName="vacancies">
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Minimum Salary</label>
+
+                    <input
+                        type="number"
+                        formControlName="salaryMin">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Maximum Salary</label>
+
+                    <input
+                        type="number"
+                        formControlName="salaryMax">
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Required Skills</label>
+
+                <input
+                    type="text"
+                    formControlName="requiredSkills"
+                    placeholder="Java, Spring Boot, Angular">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea
+                    rows="8"
+                    formControlName="description">
+                </textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Application Deadline</label>
+
+                <input
+                    type="date"
+                    formControlName="applicationDeadline">
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Post Job
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>

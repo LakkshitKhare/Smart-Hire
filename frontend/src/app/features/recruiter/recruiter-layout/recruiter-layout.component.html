@@ -1,0 +1,80 @@
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            SmartHire
+
+        </div>
+
+        <ul class="menu">
+
+            <li
+                routerLink="/recruiter/dashboard"
+                routerLinkActive="active">
+
+                Dashboard
+
+            </li>
+
+            <li
+                routerLink="/recruiter/profile"
+                routerLinkActive="active">
+
+                Company Profile
+
+            </li>
+
+            <li
+                routerLink="/recruiter/create-job"
+                routerLinkActive="active">
+
+                Create Job
+
+            </li>
+
+            <li
+                routerLink="/recruiter/manage-jobs"
+                routerLinkActive="active">
+
+                Manage Jobs
+
+            </li>
+
+            <li
+                routerLink="/recruiter/applicants"
+                routerLinkActive="active">
+
+                Applicants
+
+            </li>
+
+            <li class="logout">
+
+                Logout
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="content">
+
+        <div class="topbar">
+
+            <h3>
+                Recruiter Portal
+            </h3>
+
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </main>
+
+</div>

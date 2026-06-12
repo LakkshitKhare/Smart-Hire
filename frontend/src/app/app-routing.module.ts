@@ -10,6 +10,9 @@ import { LayoutComponent } from './features/candidate/layout/layout.component';
 
 import { ProfileComponent } from './features/candidate/profile/profile.component';
 import { ResumeComponent } from './features/candidate/resume/resume.component';
+import { RecruiterLayoutComponent } from './features/recruiter/recruiter-layout/recruiter-layout.component';
+import { RecruiterDashboardComponent } from './features/recruiter/recruiter-dashboard/recruiter-dashboard.component';
+import { CreateJobComponent } from './features/recruiter/create-job/create-job.component';
 
 const routes: Routes = [
 
@@ -44,8 +47,8 @@ const routes: Routes = [
         component: ProfileComponent
       },
       {
-        path:'myresume',
-        component:ResumeComponent
+        path: 'myresume',
+        component: ResumeComponent
       },
       {
         path: '',
@@ -53,6 +56,25 @@ const routes: Routes = [
         pathMatch: 'full'
       }
 
+    ]
+  },
+  {
+    path: 'recruiter',
+    component: RecruiterLayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: RecruiterDashboardComponent
+      },
+      {
+        path: 'create-job',
+        component: CreateJobComponent
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }
     ]
   }
 

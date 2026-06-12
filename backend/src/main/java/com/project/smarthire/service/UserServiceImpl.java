@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
         if (!encoder.matches(loginDTO.getPassword(), user.getPassword())) {
             throw new SmartHireException("Service.INVALID_CREDENTIALS");
         }
-        return "Login Success";
+        return ""+user.getRole();
     }
 
 }
